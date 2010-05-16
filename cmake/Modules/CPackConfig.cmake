@@ -1,0 +1,31 @@
+#include(InstallRequiredSystemLibraries)
+
+# For help take a look at:
+# http://www.cmake.org/Wiki/CMake:CPackConfiguration
+
+### general settings
+#set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/COPYING")
+#set(CPACK_PACKAGE_CONTACT "via@tropiconet.com")
+set(CPACK_PACKAGE_VENDOR "Trópico")
+set(CPACK_SYSTEM_NAME "arm")
+set(CPACK_GENERATOR "DEB")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_DEBIAN_PACKAGE_VERSION}-${CPACK_SYSTEM_NAME}")
+
+# Adiciona tag de liberação
+if(VIA_TAG_FOUND)
+  set(CPACK_DEBIAN_PACKAGE_VERSION "${CPACK_DEBIAN_PACKAGE_VERSION}${VIA_TAG_RELEASE}")
+  set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_DEBIAN_PACKAGE_VERSION}-${CPACK_SYSTEM_NAME}")
+endif(VIA_TAG_FOUND)
+
+### debian general settings
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "arm")
+
+### source package settings
+set(CPACK_SOURCE_GENERATOR "TGZ")
+set(CPACK_SOURCE_IGNORE_FILES "~$;[.]swp$;/[.]svn/;/[.]git/;.gitignore;/build/;tags;cscope.*")
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+
+set(CPACK_PACKAGING_INSTALL_PREFIX "/")
+
+include(CPack)
