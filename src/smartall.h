@@ -4,6 +4,9 @@
 
 */
 
+#ifndef SMARTALL_H
+#define SMARTALL_H
+
 #ifdef __cplusplus
     extern "C" {
 #endif
@@ -55,7 +58,6 @@ extern 	void sm_free(void *fp),
 #ifdef __cplusplus
     }
 #endif
-
 
 #ifdef __cplusplus
 
@@ -126,6 +128,8 @@ class SMARTALLOC
           free(ptr);
       }
 };
+#endif
+
 #endif
 
 #endif
