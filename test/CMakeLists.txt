@@ -1,5 +1,7 @@
 MACRO_ADD_UNIT_TEST("test_a_simple_class" "test_a_simple_class.cpp" "${SMARTALL_SHARED_LIBRARY}")
 MACRO_ADD_UNIT_TEST("test_alloc_three_strings" "test_alloc_three_strings.c" "${SMARTALL_SHARED_LIBRARY}")
 MACRO_ADD_UNIT_TEST("test_alloc_one_hundred_objects" "test_alloc_one_hundred_objects.c" "${SMARTALL_SHARED_LIBRARY}")
-MACRO_ADD_UNIT_TEST("test_alloc_two_million_objects" "test_alloc_two_million_objects.c" "${SMARTALL_SHARED_LIBRARY}")
+#MACRO_ADD_UNIT_TEST("test_alloc_two_million_objects" "test_alloc_two_million_objects.c" "${SMARTALL_SHARED_LIBRARY}")
 MACRO_ADD_UNIT_TEST("test_smtest" "test_smtest.c" "${SMARTALL_SHARED_LIBRARY}")
+MACRO_ADD_UNIT_TEST("test_calloc_one_hundred_objects" "test_calloc_one_hundred_objects.c" "${SMARTALL_SHARED_LIBRARY}")
+MACRO_ADD_UNIT_TEST("test_a_simple_class_with_calloc" "test_a_simple_class_with_calloc.cpp" "${SMARTALL_SHARED_LIBRARY}")

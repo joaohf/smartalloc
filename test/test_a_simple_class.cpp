@@ -19,7 +19,7 @@ int main() {
 	Test1 *v2 = New(Test1);
 
 	delete v1;
-    delete v2;
+        delete v2;
 
 #ifdef SMARTALLOC
 	fprintf(stderr,
